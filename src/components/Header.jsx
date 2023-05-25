@@ -2,7 +2,7 @@ import logoLight from "../assets/images/logoLight.png";
 import cartIcon from "../assets/icons/cartIcon.png";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({ cartCount }) => {
     return (
         <nav id="header" className="text-white">
             <div className="w-full mx-auto container flex flex-wrap items-center justify-between mt-0 py-2">
@@ -17,8 +17,9 @@ export const Header = () => {
                     <Link to="#about" className="text-l">About</Link>
                 </div>
                 <div className="flex items-center justify-between space-x-4">
-                    <Link to="/cart" className="text-xl w-10">
+                    <Link to="/cart" className="text-xl w-10 relative">
                         <img src={cartIcon} alt="cart" />
+                        {cartCount > 0 ? <div className="rounded-full bg-yellow-700 text-white inline-flex items-center justify-center w-full absolute -top-1 -right-1">{cartCount}</div> : null}
                     </Link>
                     <Link to="/login" className="text-l ">Login</Link>
                     <Link to="/signup" className="text-l pr-8">Sign Up</Link>

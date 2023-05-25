@@ -28,4 +28,4 @@ export const cartProducts = state => state.cart.products
 
 export const {  addToCart, clearCart, incrementProductAmount, decrementProductAmount } = cartSlice.actions
 
-export default cartSlice.reducer 
+export default cartSlice.reducer
